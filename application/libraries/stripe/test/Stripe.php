@@ -8,7 +8,7 @@ function authorizeFromEnv()
 {
   $apiKey = getenv('STRIPE_API_KEY');
   if (!$apiKey)
-    $apiKey = "INSERT API KEY HERE";
+    $apiKey = "tGN0bIwXnHdwOa85VABjPdSn8nWY7G7I";
   Stripe::setApiKey($apiKey);
 }
 

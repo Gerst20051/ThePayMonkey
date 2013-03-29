@@ -6,10 +6,10 @@ public function index(){
 		require_once("application/libraries/stripe/lib/Stripe.php");
 		// set your secret key: remember to change this to your live secret key in production
 		// see your keys here https://manage.stripe.com/account
-		Stripe::setApiKey("sk_adjPtH0drK5RWQtXogGyYO9YqnJaB");
+		Stripe::setApiKey("ENTER STRIPE API KEY HERE");
 		// get the credit card details submitted by the form
 		$token = $_POST['stripeToken'];
-		$userid = (int)$_POST['userid'];
+		$userid = (int) $_POST['userid'];
 		$email = $_POST['email'];
 		$groupid = (int) $_GET['groupid'];
 		$this->load->library('UserLib', '', 'user_lib');
