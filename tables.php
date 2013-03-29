@@ -9,9 +9,11 @@ $server = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"],1);
+
 $global_dbh = mysql_connect($server, $username, $password) or die("Could not connect to database");
 mysql_select_db($db, $global_dbh) or die("Could not select database");
-function display_db_query($query_string, $connection, $header_bool, $table_params) {
+
+function display_db_query($query_string, $connection, $header_bool, $table_params){
 	$result_id = mysql_query($query_string, $connection) or die("display_db_query:" . mysql_error());
 	$column_count = mysql_num_fields($result_id) or die("display_db_query:" . mysql_error());
 	echo "<table $table_params>\n";
@@ -33,14 +35,14 @@ function display_db_query($query_string, $connection, $header_bool, $table_param
 	echo "</table>\n"; 
 }
 
-function display_db_table($tablename, $connection, $header_bool, $table_params) {
+function display_db_table($tablename, $connection, $header_bool, $table_params){
 	$query_string = "SELECT * FROM $tablename";
 	echo "<h1>$tablename</h1>";
 	display_db_query($query_string, $connection, $header_bool, $table_params);
 }
 
 $result = mysql_query("SHOW TABLES FROM `$db`");
-if (0 < mysql_num_rows($result)) {
+if (mysql_num_rows($result)) {
 	while ($row = mysql_fetch_row($result)) {
 		$table = "{$row[0]}";
 		display_db_table($table, $global_dbh, TRUE, "border='2'");

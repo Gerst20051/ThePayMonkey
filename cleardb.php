@@ -8,7 +8,7 @@ $db = substr($url["path"],1);
 echo "<pre>";
 print_r($url);
 echo "</pre>";
-echo "<p>/applications/xampp/xamppfiles/bin/mysql -u $username -p $db -h $server < ~/heroku/thepaymonkey/input.sql > ~/heroku/thepaymonkey/output.txt</p>\n";
+echo "<p>/applications/xampp/xamppfiles/bin/mysql -u $username -p $db -h $server < ~/web/heroku/thepaymonkey/input.sql > ~/web/heroku/thepaymonkey/output.txt</p>\n";
 
 $link = mysql_connect($server, $username, $password);
 
