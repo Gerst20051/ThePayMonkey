@@ -45,13 +45,26 @@
 | the active record class
 */
 
+if (LOCAL) {
+	$hostname = "";
+	$username = "";
+	$password = "";
+	$database = "";
+} else {
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+	$hostname = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$database = substr($url["path"],1);
+}
+
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'YOUR_HOST_NAME';
-$db['default']['username'] = 'YOUR_USERNAME';
-$db['default']['password'] = 'YOUR_PASSWORD';
-$db['default']['database'] = 'YOUR_DATABASE_NAME';
+$db['default']['hostname'] = $hostname;
+$db['default']['username'] = $username;
+$db['default']['password'] = $password;
+$db['default']['database'] = $database;
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

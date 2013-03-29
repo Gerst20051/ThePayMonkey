@@ -14,7 +14,11 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+if (LOCAL) {
+	$config['base_url']	= '';
+} else {
+	$config['base_url']	= '';
+}
 
 /*
 |--------------------------------------------------------------------------
