@@ -1,0 +1,44 @@
+.hero-unit {
+padding:40px;
+}
+
+h2 {
+font-size:36px;
+}
+
+.top-bottom-space-sm {
+padding:10px 0;
+}
+
+.payment-errors {
+color:#f00;
+font-size:20px;
+margin-left:50px;
+}
+
+.form-row label {
+font-weight:bold;
+}
+
+.special-msg {
+display:inline-block;
+font-size:120%;
+padding:10px;
+}
+
+.payment-box {
+border:thin solid #bbb;
+border-radius:8px;
+box-shadow:0 0 13px #888;
+float:none;
+padding:10px;
+margin:0 auto;
+}
+
+input.input_sm {
+width:50px;
+}
+
+form#payment-form {
+margin-left:20px;
+}
