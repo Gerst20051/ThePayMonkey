@@ -1,1 +1,1 @@
-select * from quotes;
+select * from users;
