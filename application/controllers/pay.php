@@ -4,9 +4,7 @@ class Pay extends MY_Controller {
 public function index(){
 	if (!empty($_POST['stripeToken'])) {
 		require_once("application/libraries/stripe/lib/Stripe.php");
-		// set your secret key: remember to change this to your live secret key in production
-		// see your keys here https://manage.stripe.com/account
-		Stripe::setApiKey("ENTER STRIPE API KEY HERE");
+		require_once("application/config/stripe.php");
 		// get the credit card details submitted by the form
 		$token = $_POST['stripeToken'];
 		$userid = (int) $_POST['userid'];
