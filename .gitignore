@@ -1,1 +1,5 @@
 .DS_Store
+application/config/database.php
+application/config/facebook.php
+application/config/config.php
+application/config/stripe.php
